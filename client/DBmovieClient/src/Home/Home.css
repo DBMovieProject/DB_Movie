@@ -1,0 +1,229 @@
+.event-page {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.event-header-container {
+    background-color: #f2f7ff;
+    padding: 18px;
+    border-radius: 20px 20px 0px 0px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.event-content-container { 
+    margin-top: 20px;
+    background-color: #fbfbfb;
+    padding: 26px;
+    border-radius: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.event-navbar-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8px 0px 10px 0px;
+    overflow-x: auto;
+}
+
+.event-navbar-content-container {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-start;
+    min-width: min-content;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .event-navbar-content-container {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+.event-navbar-content-container li {
+    display: inline-block;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.event-navbar-content-container li p {
+    transition: all 0.3s ease 0s;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+}
+
+.event-navbar-content-container li p:hover {
+    color: rgb(208, 101, 101);
+}
+
+.event-category {
+    color: black;
+    background-color: white;
+}
+
+.event-category-selected {
+    color: white;
+    background-color: rgb(208, 101, 101);
+}
+
+.event-about-container {
+    margin-top: 20px;
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.event-about-content-container {
+    padding-top: 20px;
+}
+
+.event-header-content-container {
+    padding-top: 20px;
+}
+
+.event-flyers-container {
+    margin: 20px;
+    border-radius: 20px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 50px;
+}
+
+@media (max-width: 640px) {
+    .event-flyers-container {
+        margin: 10px;
+        padding: 20px;
+        gap: 1rem;
+    }
+    
+    .event-page {
+        padding: 0.5rem;
+    }
+}
+
+/* Container Styles */
+.dropdown-container {
+    overflow-x: auto;
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+  
+  @media (min-width: 640px) {
+    .dropdown-container {
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Navigation Styles */
+  .dropdown-nav {
+    display: inline-flex;
+    width: 100%;
+    padding: 0 1rem;
+  }
+  
+  @media (min-width: 640px) {
+    .dropdown-nav {
+      padding: 0;
+    }
+  }
+  
+  /* Label Styles */
+  .dropdown-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #4a5568; /* Gray-700 equivalent */
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Select Dropdown Styles */
+  .dropdown-select {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #d2d6dc; /* Gray-300 equivalent */
+    background-color: #ffffff; /* White */
+    border-radius: 0.375rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* Tailwind shadow-sm equivalent */
+    font-size: 0.875rem;
+    outline: none;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  
+  .dropdown-select:focus {
+    border-color: #3b82f6; /* Blue-500 equivalent */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25); /* Blue focus ring */
+  }
+  
+  /* Option Styles */
+  .dropdown-select option {
+    font-size: 0.875rem;
+  }
+
+  .Hero-Searchbar {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    
+}
+
+.Hero-SearchBar-Container {
+    border: 2px solid black;
+    top: 50px;
+    padding: 14px;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    color: black;
+    border-radius: 28px;
+    margin: 20px;
+    width: 484px;
+    height: 34px;
+}
+
+.search-icon {
+    color: black;
+}
+
+.search-input {
+    font-size: 16px;
+    font-family: 'Lexend', sans-serif;
+    color: black; /* Ensure text color is black */
+    margin-left: 14px;
+    outline: none;
+    border: none;
+    background: transparent;
+    z-index: 4;
+    width: 350px;
+}
+
+.search-input:hover {
+    cursor: text;
+}
+
+.search-input::placeholder {
+    color: #aab7c7;
+    opacity: 1;
+}
+
+.search-input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
+
+  
