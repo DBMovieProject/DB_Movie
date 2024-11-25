@@ -182,4 +182,16 @@ const insertActorsForNowPlayingMovies = async (movies) => {
 };
 
 
-module.exports = { convertGenretoSQLFormating, insertGenres, convertMovieResultToSQLFormat, insertMovies, getDirectorsAndInsert, insertActorsForNowPlayingMovies, insertMoviePoster}
+
+
+
+
+
+module.exports = { convertGenretoSQLFormating, 
+                   insertGenres, 
+                   convertMovieResultToSQLFormat, 
+                   insertMovies, 
+                   getDirectorsAndInsert, 
+                   insertActorsForNowPlayingMovies, 
+                   insertMoviePoster, 
+                   }

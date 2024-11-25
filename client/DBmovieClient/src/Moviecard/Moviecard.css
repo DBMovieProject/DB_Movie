@@ -1,0 +1,79 @@
+.FlyerCard {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 44px 20px 20px;
+    background-color: #f2f7ff;
+    padding: 26px;
+    border-radius: 16px;
+    height: 100%;
+}
+
+.FlyerCard-img-container {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.event-flyer {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    display: block;
+    border-radius: inherit;
+    object-fit: contain;
+}
+
+.FlyerCard-content-container {
+    margin-top: 14px;
+    width: 100%;
+    padding-left: 16px;
+    padding-top: 8px;
+}
+
+.FlyerCard-content-container p {
+    padding-top: 14px;
+    font-weight: 500;
+}
+
+.eventName {
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    overflow-wrap: break-word;
+}
+
+.FlyerCard-content-container span {
+    font-weight: 350;
+}
+
+.description-content {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.genre-text {
+    display: inline;
+}
+
+@media (max-width: 640px) {
+    .FlyerCard {
+        margin: 10px;
+        padding: 20px;
+    }
+    
+    .FlyerCard-content-container {
+        padding-left: 8px;
+    }
+    
+    .eventName {
+        font-size: 1.125rem;
+    }
+    
+    .event-flyer {
+        max-height: 400px;
+    }
+}

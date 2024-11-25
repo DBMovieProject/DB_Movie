@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+.YourCart{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    background-color: #ffffff;
+    box-sizing: border-box;
+
+
+    .YourCart-Container {
+        display: flex;
+        height: 100%;
+        width: 100%;
+
+        
+        flex-direction: column;
+
+        .header-container {
+            display: flex;
+            font-family: "Lato", sans-serif;
+            font-style: normal;
+            font-size:28px;
+            width: 100%;
+
+            justify-content: center;
+            color: rgb(35, 34, 34);
+
+            
+        }
+
+        .YourCart-Content-Container {
+            font-family: "Lato", sans-serif;
+            font-style: normal;
+            display: flex;
+            height: 100%;
+            width: 100%;
+            flex-direction: column;
+            box-sizing: border-box;
+            padding: 40px;
+           
+      
+        }
+
+    }
+}

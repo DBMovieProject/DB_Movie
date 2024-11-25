@@ -19,6 +19,7 @@ app.use(cors());
 //Routes
 app.use('/auth', authRoutes);
 app.use('/ApiRoutes', ApiRoutes)
+app.use('/MovieRoutes', movieRoutes)
 // app.use('/getAllMovies', movieRoutes);
 // app.use('/cart', cartRoutes);
 // app.use('/search', searchRoutes);
