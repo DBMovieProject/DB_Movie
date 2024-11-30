@@ -8,7 +8,10 @@ const {getAllMovies,
         getMoviesByGenre,
         getAllDirectors,
         getMoviesByDirector,
-        addReview} = require('../models/movies')
+        addReview,
+        addMovie,
+        findMovieByTitle,
+        deleteMovieById} = require('../models/movies')
 
 const getAllMoviesandsend = async(req,res) => {
     try {
@@ -20,6 +23,36 @@ const getAllMoviesandsend = async(req,res) => {
     }
 
 }
+
+const addMovieHandler = async (req, res) => {
+    const { movie } = req.body;
+  
+    try {
+      const existingMovie = await findMovieByTitle(movie.title);
+  
+      if (existingMovie) {
+        return res.json({ exists: true });
+      }
+  
+      await addMovie(movie);
+      res.json({ exists: false });
+    } catch (error) {
+      console.error('Error in addMovieHandler:', error);
+      res.status(500).json({ message: 'Server error' });
+    }
+  };
+
+const deleteMovieHandler = async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        await deleteMovieById(id);
+        res.status(200).json({ message: 'Movie deleted successfully' });
+    } catch (error) {
+        console.error('Error deleting movie:', error);
+        res.status(500).json({ message: 'Server error' });
+    }
+};
 
 const getAllMoviesandsendbyPopularity = async(req,res) => {
     try {
@@ -175,6 +208,7 @@ const getMoviesByDirectorHandler = async (req, res) => {
   
       // Validate if all required fields are provided
       if (!movieID || !userID || !rating || !reviewText) {
+        console.log('condition hit')
         return res.status(400).json({ message: 'All fields are required' });
       }
   
@@ -202,5 +236,7 @@ module.exports =  { getAllMoviesandsend,
                     getMoviesByGenreHandler,
                     getAllDirectorsHandler,
                     getMoviesByDirectorHandler,
-                    addReviewHandler
+                    addReviewHandler,
+                    addMovieHandler,
+                    deleteMovieHandler
                 }

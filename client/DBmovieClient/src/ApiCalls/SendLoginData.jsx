@@ -12,6 +12,9 @@ const SendLoginData = () => {
             if (response.status === 201) {
                 console.log('No errors!!!')
                 return response.data
+            }else if (response.status === 200) {
+                console.log('No errors!!!')
+                return response.data
             }
         
           } catch (error) {

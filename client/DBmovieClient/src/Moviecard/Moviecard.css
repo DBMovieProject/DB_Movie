@@ -77,3 +77,42 @@
         max-height: 400px;
     }
 }
+
+.YourCart-Content-Quantity {
+    margin-top: 10px;
+    display: flex;
+    height: 100%;
+    width: 100%;
+     
+    align-items: flex-start; 
+
+    #quantity {
+        padding-top: 16px;
+        padding-right: 20px;
+    }
+}
+
+#contact {
+    margin-top: 5px;
+    margin-right: 20px;
+    /* top | right | bottom | left */
+    padding: 8px 20px 10px 20px;
+
+    font-family: "Lato", sans-serif;
+    font-weight: 750;
+    font-style: normal;
+    height: 40px;
+    width: 100px;
+    background-color: #1c232c;
+    color: white;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    
+    
+}
+
+#contact:hover {
+    color: white;
+    background-color: black;
+}

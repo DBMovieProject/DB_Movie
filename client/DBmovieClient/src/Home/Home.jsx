@@ -4,7 +4,7 @@ import MovieApi from '../ApiCalls/MovieApi';
 import './Home.css'
 import Moviecard from '../Moviecard/Moviecard';
 
-const Home = () => {
+const Home = (props) => {
 
     const [movies, setMovies] = useState([]);
     const [genres, setGenres] = useState([]);
@@ -12,6 +12,8 @@ const Home = () => {
     const [selectedGenre, setSelectedGenre] = useState(""); // State to track selected option
     const [selectedDirector, setSelectedDirector] = useState("");
     const [searchTerm, setSearchTerm] = useState('')
+    const [refresh, setRefresh] = useState(false); // Trigger for re-fetching data
+
     
     
     const {getAllMovies, 
@@ -43,7 +45,7 @@ const Home = () => {
         fethAllmovies();
         fetchAllgenres();
         fetchAlldirectors();
-    },[]);
+    },[refresh]);
 
     // Handle selection change
     const handleSelect = async (e) => {
@@ -173,7 +175,7 @@ const Home = () => {
           {/* Event Cards Grid */}
           <div className="event-content-container">
             {movies?.map((event, index) => (
-              <Moviecard key={index} event={event} />
+              <Moviecard key={index} event={event} adminLoggedin = {props.adminLoggedin} refresh = {refresh} setRefresh = {setRefresh} />
             ))}
           </div>
   

@@ -10,7 +10,12 @@ const { getAllMoviesandsend,
         getMoviesByGenreHandler,
         getAllDirectorsHandler,
         getMoviesByDirectorHandler,
-        addReviewHandler} = require('../controllers/movieController')
+        addReviewHandler,
+        addMovieHandler,
+        deleteMovieHandler} = require('../controllers/movieController')
+
+    
+//MOVIES 
 
 router.get('/getAllMovies', getAllMoviesandsend);
 
@@ -23,6 +28,11 @@ router.get('/getActorsByMovie/:movieID', getActorsByMovieHandler);
 router.get('/getMoviesByActor/:actorID', getMoviesByActorHandler);
 
 router.get('/getAllMovieActors', getAllMovieActorsHandler);
+
+router.post('/add', addMovieHandler);
+
+router.delete('/delete/:id', deleteMovieHandler);
+
 
 //Genres
 
