@@ -62,13 +62,46 @@ async function getAllMoviesByPopularity() {
             m.popularity DESC;
     `; // SQL query to get all movies
         const result = await pool.query(query); // Execute the query
-        console.log(result.rows)
         return result.rows; // Return the rows (movies) from the result
     } catch (error) {
         console.error('Error fetching movies:', error);
         throw error; // Propagate the error for further handling
     }
 }
+
+
+// Function to find a movie by title
+async function findMovieByTitle(title) {
+    try {
+      const result = await pool.query('SELECT * FROM Movie WHERE title = $1', [title]);
+      return result.rows[0]; // Return the first match if found
+    } catch (error) {
+      console.error('Error finding movie by title:', error);
+      throw error;
+    }
+  }
+  
+  // Function to add a movie
+  async function addMovie(movie) {
+    try {
+      await pool.query(
+        'INSERT INTO Movie (MovieID, title, releaseDate, popularity, poster_path) VALUES ($1, $2, $3, $4, $5)',
+        [movie.id, movie.title, movie.release_date, movie.popularity, movie.poster_path]
+      );
+    } catch (error) {
+      console.error('Error adding movie:', error);
+      throw error;
+    }
+  }
+
+  async function deleteMovieById(movieId) {
+    try {
+      await pool.query('DELETE FROM Movie WHERE MovieID = $1', [movieId]);
+    } catch (error) {
+      console.error('Error deleting movie:', error);
+      throw error;
+    }
+  }
 
 async function searchMoviesByTitle(title) {
     try {
@@ -286,5 +319,8 @@ module.exports = { getAllMovies,
                    getMoviesByGenre,
                    getAllDirectors,
                    getMoviesByDirector,
-                   addReview
+                   addReview,
+                   findMovieByTitle,
+                   addMovie,
+                   deleteMovieById
                 }

@@ -82,6 +82,34 @@ const MovieApi = () => {
             return `error ${error}, ${false}`
         }
         };
+    
+    const addUserReviews = async (reviewData) => {
+        try {
+            const response = await axios.post(
+                `http://localhost:3001/MovieRoutes/addReview`,
+                reviewData
+            ); // Adjust the API endpoint if needed
+            return response.data
+        } catch (error) {
+            console.error('Error fetching genres:', error);
+            return `error ${error}, ${false}`
+        }
+        };
+
+    const removeMovie = async (movieId) => {
+        try {
+            const response = await fetch(`http://localhost:3001/MovieRoutes/delete/${movieId}`, {
+            method: 'DELETE',
+            });
+            const data = await response.json();
+            if (!response.ok) throw new Error(data.message || 'Failed to delete movie');
+            return data;
+        } catch (error) {
+            console.error('Error in removeMovie:', error);
+            throw error;
+        }
+        };
+          
   return {
     getAllMovies,
     getAllMoviesByPopularity,
@@ -90,7 +118,9 @@ const MovieApi = () => {
     searchMovie,
     getAllDirectors,
     getMoviesByDirector,
-    getUserReviews
+    getUserReviews,
+    addUserReviews,
+    removeMovie
 }
 }
 

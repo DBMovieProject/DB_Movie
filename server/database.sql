@@ -56,11 +56,12 @@ CREATE TABLE MovieActor (
     UNIQUE (MovieID, ActorID)        -- Ensures that each actor appears only once per movie
 );
 
-CREATE TABLE Users (
-    UserID INT PRIMARY KEY,             -- Unique identifier for each user
-    Username VARCHAR(50) NOT NULL,      -- Username of the user
-    Email VARCHAR(100) NOT NULL UNIQUE, -- User's email address, must be unique
-    Password VARCHAR(255) NOT NULL     -- Encrypted password for authentication
+CREATE TABLE users (
+    userID SERIAL PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role VARCHAR(20) DEFAULT 'user' -- 'admin' or 'user'
 );
 
 
